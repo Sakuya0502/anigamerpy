@@ -10,6 +10,7 @@ pip install anigamerpy
 本模組可獲取兩種資料
 
 * 新番資料
+
 即動畫瘋首頁的所有動畫
 ```python
 from anigamerpy import anime
@@ -26,6 +27,7 @@ logger.info(data[0]['image']) #圖片
 ```
 
 * 搜尋資料
+
 獲取搜尋的結果
 ```python
 from anigamerpy import anime
@@ -47,4 +49,5 @@ logger.info(data[0]['image']) #圖片
 
 ## License
 本專案使用 MIT LICENSE
+
 MIT © [Sakuya0502](https://github.com/Sakuya0502/anigamerpy/blob/main/LICENSE)
