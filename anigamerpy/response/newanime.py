@@ -10,7 +10,6 @@ class NewAnime:
         }
         self.base_url = 'https://ani.gamer.com.tw/'
         self.result = []
-        self.anime_data = {}
     
     def get_new_anime(self):
         req = requests.get(self.base_url, headers=self.headers)
@@ -32,7 +31,6 @@ class NewAnime:
                     'image': anime_pic
                 }
                 self.result.append(self.ndata)
-                self.anime_data = {}
             if anime_name == '':
                 return ErrorType.no_result()
         else:

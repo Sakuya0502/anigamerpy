@@ -10,7 +10,6 @@ class Search:
         }
         self.base_url = 'https://ani.gamer.com.tw/search.php?keyword='
         self.result = []
-        self.search_data = {}
     
     def search_anime(self, keyword: str):
         req = requests.get(self.base_url + keyword, headers=self.headers)
@@ -25,16 +24,32 @@ class Search:
                 anime_year = search_item.select_one('.theme-time').text.strip()
                 anime_href = search_item.get('href')
                 anime_pic = search_item.select_one('.theme-img')['data-src']
+                anime_tags = []
+                if search_item.select_one('.color-bilingual') != None:
+                    anime_both_tag = search_item.select_one('.color-bilingual').text.strip()
+                    anime_tags.append(anime_both_tag)
+                else:
+                    pass
+                if search_item.select_one('.color-paid') != None:
+                    anime_paid_tag = search_item.select_one('.color-paid').text.strip()
+                    anime_tags.append(anime_paid_tag)
+                else:
+                    pass
+                if search_item.select_one('.color-R18') != None:
+                    anime_age_tag = search_item.select_one('.color-R18').text.strip()
+                    anime_tags.append(anime_age_tag)
+                else:
+                    pass
                 self.sdata = {
                     'name': anime_name,
                     'watch_count': anime_watch_number,
                     'episode': anime_episode,
                     'years': anime_year,
                     'href': anime_href,
-                    'image': anime_pic
+                    'image': anime_pic,
+                    'tags': anime_tags
                 }
                 self.result.append(self.sdata)
-                self.search_data = {}
             if anime_name == '':
                 return ErrorType.no_result()
         else:
