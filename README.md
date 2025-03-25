@@ -1,4 +1,4 @@
-# anigamerpy 0.1.0
+# anigamerpy 0.2.0
 [動畫瘋](https://ani.gamer.com.tw/)爬蟲工具
 
 ## 下載
@@ -29,7 +29,6 @@ logger.info(data[0]['image']) #圖片
 * 搜尋資料
 
 獲取搜尋的結果
-參數ID請參考[此Json檔](https://raw.githubusercontent.com/Sakuya0502/anigamerpy/refs/heads/main/anigamerpy/json/allanime_data.json)
 ```python
 from anigamerpy import anime
 from loguru import logger
@@ -49,6 +48,7 @@ logger.info(data[0]['tags']) #標籤
 * 所有動畫
 
 動畫瘋內的所有動畫
+參數ID請參考[此Json檔](https://raw.githubusercontent.com/Sakuya0502/anigamerpy/refs/heads/main/anigamerpy/json/allanime_data.json)
 ```python
 from anigamerpy import anime
 from loguru import logger
