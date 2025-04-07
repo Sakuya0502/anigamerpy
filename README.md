@@ -1,4 +1,4 @@
-# anigamerpy 0.2.0
+# anigamerpy 0.2.3
 [動畫瘋](https://ani.gamer.com.tw/)爬蟲工具
 
 ## 下載

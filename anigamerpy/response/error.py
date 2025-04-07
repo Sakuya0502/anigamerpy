@@ -13,6 +13,10 @@ class ErrorType:
     def over_limit():
         return 'You can only use 5 tags.'
     
-    #
+    #無此ID
     def no_limit():
         return 'No such code found.'
+    
+    #帳號密碼錯誤
+    def wronge_data():
+        return 'Your username or password are incorract.'

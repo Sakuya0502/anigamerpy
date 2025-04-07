@@ -1,18 +1,21 @@
-import setuptools
-from setuptools import setup
+import setuptools, re
+from setuptools import setup, find_packages
 
 with open('README.md', 'r', encoding='utf-8') as f:
     readme = f.read()
 
+with open('anigamerpy/__init__.py', 'r') as f:
+    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
+
 setup(
     name='anigamerpy',
-    version='0.2.1',
+    version=version,
     author='Sakuya0502',
     description='動畫瘋爬蟲工具',
     long_description=readme,
     long_description_content_type='text/markdown',
     url='https://github.com/Sakuya0502/anigamerpy',
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
     classifiers=[
         'Natural Language :: Chinese (Traditional)',
         'Operating System :: Microsoft :: Windows :: Windows 11',

@@ -7,7 +7,7 @@ class AllAnime:
     def __init__(self):
         self.base_url = 'https://ani.gamer.com.tw/animeList.php?'
         self.header = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'
         }
         self.result = []
         self.json_data = json.load(codecs.open("./anigamerpy/json/allanime_data.json", "r", "utf-8"))
